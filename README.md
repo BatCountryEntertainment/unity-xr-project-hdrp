@@ -108,4 +108,76 @@ click on the new material you just renamed in the project tab to view it in your
 
 now click and drag the green material onto our magenta cube in the scene view.
 
+now we should see our green cube, or whatever else you pick for its color.
+
 ![Figure 19](Documents/Images/19.png)
+
+now lets save our scene before we forget. if you see a bunhc of shader errors in the console, just clear them out. As long as you see no magenta on our simple scene everything is ok. very easy for human.
+
+Its important to note that you can access the material upgrade actions within the edit menu -> rendering -> material 
+
+![Figure 20](Documents/Images/20.png)
+
+I also recommend toggling the lights off on your scene view to get unity to generate the shaders for these automagically. once done you can toggle them off. the lighting button is the third one.. you can mouse over for a tooltip.
+
+![Figure 21](Documents/Images/21.png)
+
+### Step 4 ###
+
+when play testing you will notice that our laser pointers are missing, but we can still pick stuff up. lets fix this after we setup some basic lighting. For this we are going to use Global Illumination.
+
+On the bottom right of the unity editor you will see four icons. click on the second to last one, which will bring up your lighting window. you can also access it via the `window -> rendering -> lighting`
+
+![Figure 22](Documents/Images/22.png)
+
+![Figure 23](Documents/Images/23.png)
+
+The lighting window has all of its setting grayed out. click the `new lighting settings` button on the top of the window.
+
+![Figure 24](Documents/Images/24.png)
+
+Its a good idea to make a new directory in your assets folder call `lighting`. lets put our new lighting setting in it.. also name it `Lighting_GI`.
+
+![Figure 25](Documents/Images/25.png)
+
+we are going to toggle on the Real time lighting and turn off baked lighting. we can choose to bake a scene's lighting after we design it. its considered a performance feature, and is not required for local development, as anyone who has baked lighting know its takes a long time, and can eat up alot of storage space. 
+
+![Figure 26](Documents/Images/26.png)
+
+Now we need to tell our Directional light to use real time lighting. not mixed. click on the directional light in your hierachy tab, and in the inspector select realtime from the mode drop down
+
+![Figure 27](Documents/Images/27.png)
+
+next we are going to disable shadows on the ground plane
+
+![Figure 28](Documents/Images/28.png)
+
+also while we are here, lets turn on global illumination and blend probes, this will allow light to bounce off the ground to create more realism.
+
+![Figure 29](Documents/Images/29.png)
+
+configure the cube as well with the same settings
+
+![Figure 30](Documents/Images/30.png)
+
+the last part of this step is to add a few light probes in to the scene. We do this by creating a light probe group, and then adding new probes into white in probe edit mode
+
+![Figure 31](Documents/Images/31.png)
+
+click `edit probes` to move them around in an even fashion, its okay to have some a little below or at floor level to simulate the sun light bouncing off the ground.
+
+![Figure 32](Documents/Images/32.png)
+
+![Figure 33](Documents/Images/33.png)
+
+we should also add a reflection probe in too.
+
+![Figure 34](Documents/Images/34.png)
+
+change the reflection probe type to sphere. for performance we will leave them on baked, also set the size to 8 or so. The maps should auto generate. NOTE: you can toggle off auto generate in your lighting settings if your doing alot of design changes.
+
+![Figure 35](Documents/Images/35.png)
+
+If you play the game you will now notice that your laser pointers are back, our setting configurations tooke care of this automagics. how nice.
+
+![Figure 36](Documents/Images/36.png)
