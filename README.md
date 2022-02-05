@@ -11,7 +11,7 @@ This is easy human, very easy. You will be a meta pro in no time using simple gu
 
 ------------------------------------------------------------------------------------------------
 
-## IMPORTANT: Quest 2 does not support standalong mode with HDRP, you will need to be wired into a PC to play your HDRP games. In the near-ish future Oculus's android SDK will support OpenGLES shaders which will allow us to compile without Vulkan API, which will allow for standalone. *FOR STANDALONE* PLEASE USE THE URP (UNIVERSAL RENDERING PIPELINE) WHICH IMPLEMENTS A SUBSET OF WHAT HDRP CAN PROVIDE. HOPEFULLY OCULUS QUEST PRO WILL SUPPORT DX11 SHADER SUPPORT. ##
+## IMPORTANT: Quest 2 does not support standalone mode with HDRP, you will need to be wired into a PC to play your HDRP games. In the near-ish future Oculus's android SDK will support OpenGLES shaders which will allow us to compile without Vulkan API, which will allow for standalone. *FOR STANDALONE* PLEASE USE THE URP (UNIVERSAL RENDERING PIPELINE) WHICH IMPLEMENTS A SUBSET OF WHAT HDRP CAN PROVIDE. HOPEFULLY OCULUS QUEST PRO WILL SUPPORT DX11 SHADER SUPPORT. ##
 
 ![Figure 00](Documents/Images/00.png)
 
