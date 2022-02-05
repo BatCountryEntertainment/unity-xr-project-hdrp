@@ -180,4 +180,40 @@ change the reflection probe type to sphere. for performance we will leave them o
 
 If you play the game you will now notice that your laser pointers are back, our setting configurations tooke care of this automagics. how nice.
 
+### Step 5 ###
+
 ![Figure 36](Documents/Images/36.png)
+
+we also notice that the lines are a bit jagged, this is because our anti-alias is off, lets fix this.. Also its worth watching https://www.youtube.com/watch?v=_WkSAn55EBM&feature=youtu.be which is the Unite Copenhagen (October 2019) talk which talks about the best settings. basically we need to stay away from MSAA, as its overkill for what our devices can push a simple FAA is sufficent.
+
+First select our camera in our scene, and select TAA from the `post anti-alias` dropdown. we can also use TAA.
+
+![Figure 37](Documents/Images/37.png)
+
+if we click on the game tab. and then on the stats window, we can see our stats when running the game. ths is useful for debugging.. 
+
+![Figure 38](Documents/Images/38.png)
+
+we are hitting about 30fps within the unity game window, this is not what the frame rate is on the device. We need a solution like SRDebug but a simple overlay in XR. There are many more settings we can do to optimize this further. This is the amazing robustness of the HDRP scriptable pipeline. In fact we can configure this in such a way to be able to get get faster performance than using just the built in pipe line. Mostly we will be using ALOT less memory, which will be one of our biggest concerns on the oculus or index. HDRP utilizes shader memory much more efficently.
+
+you can read more about dynamic super sampling here https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@12.1/manual/Dynamic-Resolution.html which is one of the best optimization features HDRP provides developers.
+
+The last part of this step is to switch rendering to Single Pass (SPI) from multi. Multi works okay in built in, but HDRP can handle this with SPI which will double our allowed frame time budget, from 5.1ms to 11.2 ms.
+
+Open up your project settings and click on the oculus item below the xr plugin menu item on the left, and from the drop down select single pass. and on the android tab select `multiview` which is basically another term for single pass. Single pass uses a pixel trasnform to offset the eyes rather then redrawing the entire scene that is offset.
+
+![Figure 39](Documents/Images/39.png)
+
+![Figure 40](Documents/Images/40.png)
+
+also lets toggle on phase sync. if you experience problems with rendering you can always disable this. it should save us a few ms on our rendering budget.
+
+also toggle subsampled which will clean up artifacts when we look around. if you experience a black screen or issues, just disable.
+
+also dont forget to configure the OpenXR which runs when we test locally. After this lets build and deploy to our oculus using the dev hub. see the walk through on `unity-xr-project-3d` section about deploying your APK to oculus
+
+![Figure 41](Documents/Images/41.png)
+
+now play test and build. if you have issues on your local dev mode, then just switch back to multi-pass.
+
+the first build on HDRP might take some time like 5 to 10 minutes. This will build your base shader cache and future builds should be much faster.
