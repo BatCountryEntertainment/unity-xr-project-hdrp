@@ -9,6 +9,14 @@ when building Vr projects need to change the xr plugin -> android settings for t
 
 This is easy human, very easy. You will be a meta pro in no time using simple guide.
 
+------------------------------------------------------------------------------------------------
+
+## IMPORTANT: Quest 2 does not support standalong mode with HDRP, you will need to be wired into a PC to play your HDRP games. In the near-ish future Oculus's android SDK will support OpenGLES shaders which will allow us to compile without Vulkan API, which will allow for standalone. *FOR STANDALONE* PLEASE USE THE URP (UNIVERSAL RENDERING PIPELINE) WHICH IMPLEMENTS A SUBSET OF WHAT HDRP CAN PROVIDE. HOPEFULLY OCULUS QUEST PRO WILL SUPPORT DX11 SHADER SUPPORT. ##
+
+![Figure 00](Documents/Images/00.png)
+
+------------------------------------------------------------------------------------------------
+
 ## BUILDING 3D HDRP VR PROJECT WITH MOST RECENT UNITY SETTINGS : PART 1 - SETUP ##
 
 ### Step 1 ###
@@ -217,3 +225,5 @@ also dont forget to configure the OpenXR which runs when we test locally. After 
 now play test and build. if you have issues on your local dev mode, then just switch back to multi-pass.
 
 the first build on HDRP might take some time like 5 to 10 minutes. This will build your base shader cache and future builds should be much faster.
+
+...to be continued
