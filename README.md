@@ -1,4 +1,4 @@
-# unity-xr-project-hdrp
+# Unity XR Project using HDRP Walkthrough Setup Guide
 Generic Unity 3d XR virtual reality project using HDRP, XRI toolkit, OpenXR, Oculus SDK and input system.
 
 ## Overview ##
